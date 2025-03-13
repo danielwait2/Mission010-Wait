@@ -18,7 +18,9 @@ namespace Mission10_Wait.Controllers
         [HttpGet(Name = "GetMarriottFood")]
         public IEnumerable<Bowler> Get()
         {
-            var bowlerList = _bowlerContext.Bowlers.Include(x=>x.Team).ToList();
+            var teamsToFilter = new[] { "Sharks", "Marlins" };
+
+            var bowlerList = _bowlerContext.Bowlers.Include(x=>x.Team).Where(x => teamsToFilter.Contains(x.Team.TeamName)).ToList();
             
             return (bowlerList);
         }
