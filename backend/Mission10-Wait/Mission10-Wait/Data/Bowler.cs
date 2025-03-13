@@ -9,7 +9,7 @@ public class Bowler
     public int BowlerId { get; set; }
     [Required]
     public string BowlerFirstName { get; set; }
-    public string BowleMiddleInit { get; set; }
+    public string? BowlerMiddleInit { get; set; }
     [Required]
     public string BowlerLastName { get; set; }
     [Required]
